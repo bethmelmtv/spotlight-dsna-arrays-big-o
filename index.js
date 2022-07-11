@@ -1,4 +1,4 @@
-module.exports = { push, pop, unshift, shift };
+module.exports = { push, pop, unshift, shift, hasDuplicates };
 
 function push(arr, item) {
   arr[arr.length] = item;
@@ -31,4 +31,15 @@ function shift(arr, item) {
   }
   arr.length = arr.length - 1;
   return firstItem;
+}
+
+function hasDuplicates(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
